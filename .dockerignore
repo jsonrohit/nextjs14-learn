@@ -1,0 +1,10 @@
+# .dockerignore
+node_modules
+
+# OS and IDE specific files
+.DS_Store
+.vscode/
+.idea/# OS and IDE specific files
+.DS_Store
+.vscode/
+.idea/
