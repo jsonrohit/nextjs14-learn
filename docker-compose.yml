@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nextjs:
+    build:
+      context: .
+    volumes:
+      - .:/app
+      - /app/node_modules # This prevents node_modules from being overwritten by the host
+    ports:
+      - "3000:3000"
+    environment:
+     - NODE_ENV=development
+     - CHOKIDAR_USEPOLLING=true
