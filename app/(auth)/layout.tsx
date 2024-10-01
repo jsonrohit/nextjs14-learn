@@ -1,5 +1,5 @@
 export const metadata = {
-    title:'Auth module',
+    title: 'Auth module',
     description: 'Auth module description'
 }
 
@@ -9,9 +9,7 @@ export default function AuthLayout({ children }: {
 }) {
     return (
         <>
-            <h1 className="bg-blue-600 py-5">Auth Header</h1>
-            { children }
-            <h1 className="bg-blue-600 py-5">Auth Footer</h1>
+            {children}
         </>
     )
 }
