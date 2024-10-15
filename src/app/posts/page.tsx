@@ -2,16 +2,13 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from "react";
-import { _get } from "../services/post"
+import { _get } from "../api/posts/route"
 
 export default function posts() {
     const [datas, setData] = useState([]);
 
-    console.log( process.env.NEXT_PUBLIC_API_URL,'sdfdsfsdffds------------');
-
     const get = async () => {
         const items = await _get('posts')
-        console.log(items, 'items');
         if (items.length)
             updsState(items)
     }
@@ -24,10 +21,14 @@ export default function posts() {
         get()
     }, []);
 
+    // useEffect(()=>{
+    //     updsState(datas)
+    //     console.log(datas,'dfgdffgddfddfddgddd');
+    // },[datas])
+
     const del = (id) => {
         const items = datas.filter(item => item.id != id)
         updsState(items);
-        console.log(id, 'delete', items);
     }
 
     return (
@@ -42,13 +43,13 @@ export default function posts() {
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody id="tableData" class="root">
-                    {!datas.length &&
+                <tbody>
+                    {/* {!datas.length &&
                         <td colSpan="4" align="center">Data not found..</td>
-                    }
-                    {datas.map((data, indx) => (
+                    } */}
+                    {datas.length && datas.map((data, indx) => (
                         <tr key={indx}>
-                            <td>{data.id}</td>
+                            <td>{indx+1}</td>
                             <td>{data.title}</td>
                             <td>{data.body}</td>
                             <td>

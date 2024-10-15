@@ -1,9 +1,9 @@
 'use client'
 
-import { _get } from "@/app/services/post"
+import { useEffect, useState } from "react"
 import { Metadata } from "next"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { _get } from "../../../api/posts/route"
 
 type Props = {
     params: {
@@ -28,13 +28,11 @@ type Props = {
 
 export default function BlogDetails(props: Props) {
     const { params: { postId } } = props;
-    console.log(postId, 'postId');
     const [data, setData] = useState({});
     const [comment, setComment] = useState([]);
 
     const get = async () => {
         const item = await _get(`posts/${postId}`)
-        console.log(item, 'item');
         if (item)
             updsState(item)
         if (item.id) {
@@ -45,7 +43,6 @@ export default function BlogDetails(props: Props) {
     }
 
     function updsState(data) {
-        console.log(data, 'data');
         setData(data)
     }
 
