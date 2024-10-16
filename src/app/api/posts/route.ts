@@ -1,7 +1,7 @@
 const URL: any = process.env.NEXT_PUBLIC_API_URL
 
 async function _get(route) {
-   return fetch(`${URL}/${route}`)
+    return fetch(`${URL}/${route}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');

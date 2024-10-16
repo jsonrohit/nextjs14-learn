@@ -1,0 +1,45 @@
+@URL = http://127.0.0.1:3000/api
+
+###### Fetch ALL Data #####
+GET {{URL}}/users
+Accept: application/json
+Content-Type: application/json
+
+
+###### Create #####
+POST {{URL}}/users
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name":"Rohit kumar",
+    "email":"test@gmail.com"
+}
+
+
+###### View #####
+GET {{URL}}/users/1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name":"Rohit kumar",
+    "email":"test@gmail.com"
+}
+
+
+###### UPDATE #####
+PUT {{URL}}/users/1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name":"Rohit kumar",
+    "email":"test@gmail.com"
+}
+
+
+###### DELETE #####
+DELETE {{URL}}/users/1
+Content-Type: application/json
+Accept: application/json
