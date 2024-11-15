@@ -1,10 +1,13 @@
-import { NextRequest, NextResponse } from "@/node_modules/next/server";
+import users from '../../../json/users.json'
 
-export async function GET(request: Request) {
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
+export function GET(){
+    return Response.json({datas: users});
 }
 
-export async function POST(request: Request) {
-    console.log(request.method,'gdgdfgdfdf');
-    return NextResponse.json({ method:'POST',success: 'Internal Server Error' }, { status: 500 })
+export async function PUT(request: Request) {
+    return Response.json({ success: 'PUT Internal Server Error' }, { status: 500 })
+}
+
+export async function DELETE(request: Request) {
+    return Response.json({ method:'DELETE',success: 'Internal Server Error' }, { status: 500 })
 }

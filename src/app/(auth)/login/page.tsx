@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import style from './styles.module.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 // export const metadata = {
@@ -18,16 +18,31 @@ export default function Login() {
 
     const onChange = (e) => {
         const value = e.target.value;
-        setState({
-            ...state,
+        console.log(e.target.name, 'ddd');
+        setState(prevState => ({
+            ...prevState,
             [e.target.name]: value,
-        });
+        }));
     }
 
-    const submitHandler = () => {
-        if (state.email == 'test@gmail.com' && state.password == 'test@123') {
+    useEffect(()=>
+    {
+console.log(error,'usefect errro');
+    },[error])
+
+    const submitHandler = async () => {  
+            const res = await fetch('api/login', {
+                body: JSON.stringify(state),
+                method: 'POST',
+            })
+            console.log(res,'gggggg');
+        if (res.status == 200) {
             router.push('posts')
-        } else {
+        } else if(res.status == 400) {
+            console.log(await res.json(),'ffffffff');
+            setError(res.errors)
+            //setError('Enter vaild email & password')
+        }else{
             setError('Enter vaild email & password')
         }
     }
@@ -55,9 +70,9 @@ export default function Login() {
                         <small>Password: test@123</small>
                     </div>
                 </div>
-            <div className="d-flex justify-content-center fixed-bottom">
-                <small className="position-absolute">Version:- Next.js 14</small>
-            </div>
+                <div className="d-flex justify-content-center fixed-bottom">
+                    <small className="position-absolute">Version:- Next.js 14</small>
+                </div>
             </div>
         </>
     )

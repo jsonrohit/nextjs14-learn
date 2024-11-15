@@ -1,0 +1,28 @@
+@URL = http://127.0.0.1:3000/api
+
+###### Login #####
+POST {{URL}}/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email":"test@gmail.com",
+    "password":""
+}
+
+#### Posts ### 
+GET {{URL}}/posts
+Accept: application/json
+Content-Type: application/json
+
+
+#### Comments ###
+GET {{URL}}/comment
+Accept: application/json
+Content-Type: application/json
+
+
+#### Singal Comment ###
+GET {{URL}}/comment?id=1
+Accept: application/json
+Content-Type: application/json

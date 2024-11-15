@@ -6,6 +6,12 @@ Accept: application/json
 Content-Type: application/json
 
 
+###### Fetch ALL Data #####
+GET {{URL}}/comments
+Accept: application/json
+Content-Type: application/json
+
+
 ###### Create #####
 POST {{URL}}/users
 Content-Type: application/json
