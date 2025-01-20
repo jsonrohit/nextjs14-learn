@@ -1,12 +1,3 @@
-let comments = [
-    {
-        comment : 'comment 1'
-    },
-    {
-        comment : 'comment 2'
-    },
-];
-
 export async function GET(request: Request) {
     const searchParams = request.nextUrl.searchParams
     const query = searchParams.get('id')
