@@ -1,0 +1,15 @@
+@URL = http://127.0.0.1:3000/api
+
+#### Posts ### 
+# @name postRequest
+GET {{URL}}/posts
+Accept: application/json
+Content-Type: application/json
+
+@postId = {{postRequest.response.body.0}}
+
+
+#### Posts ### 
+GET {{URL}}/posts/{{postId}}
+Accept: application/json
+Content-Type: application/json

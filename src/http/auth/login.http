@@ -10,10 +10,7 @@ Content-Type: application/json
     "password":""
 }
 
-#### Posts ### 
-GET {{URL}}/posts
-Accept: application/json
-Content-Type: application/json
+
 
 
 #### Comments ###
