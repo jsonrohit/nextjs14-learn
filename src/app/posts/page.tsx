@@ -2,33 +2,28 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from "react";
-import { _get } from "../api/posts/route"
+import { GET } from "../api/posts/route"
 
-export default function posts() {
+export default function Posts() {
     const [datas, setData] = useState([]);
-
-    const get = async () => {
-        const items = await _get('posts')
-        if (items.length)
-            updsState(items)
-    }
-
-    function updsState(data) {
-        setData(data)
-    }
 
     useEffect(() => {
         get()
     }, []);
 
-    // useEffect(()=>{
-    //     updsState(datas)
-    //     console.log(datas,'dfgdffgddfddfddgddd');
-    // },[datas])
+    useEffect(() => {
+        setData(datas)
+    }, [datas]);
+
+    const get = async () => {
+        const posts = await GET().json();
+        if (posts && posts.datas)
+            setData(posts.datas)
+    }
 
     const del = (id) => {
         const items = datas.filter(item => item.id != id)
-        updsState(items);
+        setData(items);
     }
 
     return (
@@ -37,19 +32,21 @@ export default function posts() {
             <table className="table table-striped table-bordered">
                 <thead className="table-dark">
                     <tr>
-                        <th>#</th>
+                        <th>S.No.</th>
                         <th>Title</th>
                         <th>Discription</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {!datas.length &&
-                        <td colSpan="4" align="center">Data not found..</td>
-                    } */}
-                    {datas.length && datas.map((data, indx) => (
+                    {datas && !datas.length &&
+                        <tr>
+                            <td colSpan="4" align="center">Data not found..</td>
+                        </tr>
+                    }
+                    {datas && datas.map((data, indx) => (
                         <tr key={indx}>
-                            <td>{indx+1}</td>
+                            <td>{indx + 1}</td>
                             <td>{data.title}</td>
                             <td>{data.body}</td>
                             <td>
