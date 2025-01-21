@@ -4,9 +4,14 @@ import Link from 'next/link'
 import { useEffect, useState } from "react";
 import { httpRequest } from '../services/apiRequest'
 
-
+interface Post {
+    id: Number,
+    name: String,
+    body: String,
+    title: String
+}
 export default function Posts() {
-    const [datas, setData] = useState([]);
+    const [datas, setData] = useState<Post[]>([]);
 
     useEffect(() => {
         get()
@@ -24,7 +29,7 @@ export default function Posts() {
     }
 
     const del = (id) => {
-        const items = datas.filter(item => item.id != id)
+        const items = datas.filter((item: any) => item.id != id)
         setData(items);
     }
 
@@ -43,7 +48,7 @@ export default function Posts() {
                 <tbody>
                     {datas && !datas.length &&
                         <tr>
-                            <td colSpan="4" align="center">Data not found..</td>
+                            <td colSpan={4} align="center">Data not found..</td>
                         </tr>
                     }
                     {datas && datas.map((data, indx) => (
