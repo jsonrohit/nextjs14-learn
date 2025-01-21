@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from "react";
-import { GET } from "../api/posts/route"
+import { httpRequest } from '../services/apiRequest'
+
 
 export default function Posts() {
     const [datas, setData] = useState([]);
@@ -16,7 +17,8 @@ export default function Posts() {
     }, [datas]);
 
     const get = async () => {
-        const posts = await GET().json();
+        const datas = await httpRequest('posts');
+        const posts = await datas.json()
         if (posts && posts.datas)
             setData(posts.datas)
     }
