@@ -48,7 +48,7 @@ export default function Posts() {
                 <tbody>
                     {datas && !datas.length &&
                         <tr>
-                            <td colSpan="4" align="center">Data not found..</td>
+                            <td colSpan={4} align="center">Data not found..</td>
                         </tr>
                     }
                     {datas && datas.map((data, indx) => (
