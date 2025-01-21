@@ -28,7 +28,7 @@ type Props = {
 
 export default function BlogDetails(props: Props) {
     const { params: { postId } } = props;
-    const [data, setData] = useState({
+    const [data, setData] :any = useState({
         post: {},
         comments: []
     });
