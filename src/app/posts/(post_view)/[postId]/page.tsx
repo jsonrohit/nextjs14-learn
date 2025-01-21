@@ -67,7 +67,7 @@ export default function BlogDetails(props: Props) {
                         <div className="mb-4">
                             <div className="d-flex justify-content-between">
                                 <div>
-                                    <h1 className="display-4">{data.post.title}</h1>
+                                    <h1 className="display-4">{data?.post?.title}</h1>
                                     <p className="text-muted">
                                         By <strong>Next.js</strong>
                                     </p>
@@ -77,7 +77,7 @@ export default function BlogDetails(props: Props) {
                         </div>
 
                         <div className="post-content mb-5">
-                            <p>{data.post.body}</p>
+                            <p>{data?.post?.body}</p>
                         </div>
 
                         <div className="comments-section mt-5">
@@ -87,8 +87,8 @@ export default function BlogDetails(props: Props) {
                                 {data.comments && data.comments.map((item, idx) => (
                                     <div key={idx} className="card mb-3">
                                         <div className="card-body">
-                                            <h5 className="card-title">{item.name} <small className="text-muted">| {item.email}</small></h5>
-                                            <p className="card-text">{item.comment}</p>
+                                            <h5 className="card-title">{item?.name} <small className="text-muted">| {item?.email}</small></h5>
+                                            <p className="card-text">{item?.comment}</p>
                                         </div>
                                     </div>
                                 ))}
