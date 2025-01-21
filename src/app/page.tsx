@@ -1,8 +1,9 @@
+import Image from "next/image";
 import { redirect } from 'next/navigation'
 
 export default function Home() {
-  redirect('/login');
+  redirect('login')
   return (
-    <h2>Hello next js</h2>
+    <p>Entry page...</p>
   );
 }
