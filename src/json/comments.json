@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "postId": 1,
+    "name": "Blogger",
+    "email":"test@gmail.com",
+    "comment": "This post provides a lot of insights. I agree with the points made about the challenges and how to overcome them."
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "postId": 2,
+    "name": "Blogger",
+    "email":"test@gmail.com",
+    "comment": "The explanation on the consequences of ignoring certain issues is spot on. I will take this advice seriously."
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "postId": 3,
+    "name": "Blogger",
+    "email":"test@gmail.com",
+    "comment": "The part about dealing with negative emotions was particularly helpful. It's something we all struggle with at times."
+  },
+  {
+    "id": 4,
+    "userId": 1,
+    "postId": 4,
+    "name": "Blogger",
+    "email":"test@gmail.com",
+    "comment": "I completely agree that handling stress requires a proactive mindset. It's easy to let it take over if we're not careful."
+  },
+  {
+    "id": 5,
+    "userId": 1,
+    "postId": 5,
+    "name": "Blogger",
+    "email":"test@gmail.com",
+    "comment": "Interesting perspective on handling conflicts. It's important to approach them with patience and a calm mind."
+  },
+  {
+    "id": 6,
+    "userId": 1,
+    "postId": 1,
+    "name": "Blogger",
+    "email":"test@gmail.com",
+    "comment": "The explanation on the consequences of ignoring certain issues is spot on. I will take this advice seriously."
+  }
+]
